@@ -253,6 +253,20 @@
         labels.forEach(label => {
             label.addEventListener('click', function () {
                 // Remove the selected class from all labels
-                labels.for
-            })
+                labels.forEach(l => l.classList.remove('selected'));
+                // Hide all ticks
+                document.querySelectorAll('.tick').forEach(tick => tick.style.display = 'none');
+                
+                // Add selected class to the clicked label
+                this.classList.add('selected');
+                // Show the tick for the selected label
+                const tick = this.querySelector('.tick');
+                if (tick) {
+                    tick.style.display = 'inline'; // Show the tick
+                }
+            });
         });
+    </script>
+</body>
+
+</html>
