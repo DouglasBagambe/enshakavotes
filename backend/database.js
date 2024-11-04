@@ -1,24 +1,24 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./voting.db');
+const { Pool } = require('pg');
 
-// Create tables
-db.serialize(() => {
-    db.run(`CREATE TABLE IF NOT EXISTS members (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        email TEXT,
-        token TEXT,
-        hasVoted INTEGER DEFAULT 0
-    )`);
-
-    db.run(`CREATE TABLE IF NOT EXISTS votes (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        token TEXT,
-        choice1 TEXT,
-        choice2 TEXT,
-        choice3 TEXT,
-        choice4 TEXT,
-        choice5 TEXT
-    )`);
+// Create a new pool instance for connecting to the Neon database
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL, // Your Neon database connection string
+    ssl: {
+        rejectUnauthorized: false, // Change this based on your security needs
+    },
 });
 
-module.exports = db;
+// Function to save vote data to the database
+const saveVote = async (voteData) => {
+    const { choice1, choice2, choice3, choice4, choice5 } = voteData;
+
+    const query = `
+        INSERT INTO votes (choice1, choice2, choice3, choice4, choice5) 
+        VALUES ($1, $2, $3, $4, $5)
+    `;
+    const values = [choice1, choice2, choice3, choice4, choice5];
+
+    await pool.query(query, values);
+};
+
+module.exports = { saveVote };
