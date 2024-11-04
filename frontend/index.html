@@ -72,16 +72,6 @@
             font-size: 20px;
         }
 
-        input[type="checkbox"] {
-            display: none; /* Hide the default checkbox */
-        }
-
-        .checkbox-label {
-            display: inline-block;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
         button {
             display: block;
             width: 100%;
@@ -110,47 +100,29 @@
     <div class="container">
         <h1>Vote for Your Candidates</h1>
         <form id="voteForm" action="/submitVote" method="POST">
+            <input type="hidden" name="token" value="{{TOKEN}}">
+
             <div class="voting-section">
                 <h2>Position 1: Team Leader</h2>
                 <label>
                     <input type="radio" name="choice1" value="Candidate A">
-                    Candidate A
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check1A" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate A <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice1" value="Candidate B">
-                    Candidate B
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check1B" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate B <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice1" value="Candidate C">
-                    Candidate C
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check1C" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate C <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice1" value="Candidate D">
-                    Candidate D
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check1D" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate D <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice1" value="Candidate E">
-                    Candidate E
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check1E" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate E <span class="tick">&#10003;</span>
                 </label>
             </div>
 
@@ -158,43 +130,23 @@
                 <h2>Position 2: Secretary</h2>
                 <label>
                     <input type="radio" name="choice2" value="Candidate A">
-                    Candidate A
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check2A" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate A <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice2" value="Candidate B">
-                    Candidate B
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check2B" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate B <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice2" value="Candidate C">
-                    Candidate C
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check2C" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate C <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice2" value="Candidate D">
-                    Candidate D
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check2D" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate D <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice2" value="Candidate E">
-                    Candidate E
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check2E" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate E <span class="tick">&#10003;</span>
                 </label>
             </div>
 
@@ -202,43 +154,23 @@
                 <h2>Position 3: Treasurer</h2>
                 <label>
                     <input type="radio" name="choice3" value="Candidate A">
-                    Candidate A
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check3A" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate A <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice3" value="Candidate B">
-                    Candidate B
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check3B" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate B <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice3" value="Candidate C">
-                    Candidate C
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check3C" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate C <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice3" value="Candidate D">
-                    Candidate D
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check3D" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate D <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice3" value="Candidate E">
-                    Candidate E
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check3E" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate E <span class="tick">&#10003;</span>
                 </label>
             </div>
 
@@ -246,43 +178,23 @@
                 <h2>Position 4: Events Coordinator</h2>
                 <label>
                     <input type="radio" name="choice4" value="Candidate A">
-                    Candidate A
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check4A" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate A <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice4" value="Candidate B">
-                    Candidate B
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check4B" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate B <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice4" value="Candidate C">
-                    Candidate C
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check4C" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate C <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice4" value="Candidate D">
-                    Candidate D
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check4D" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate D <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice4" value="Candidate E">
-                    Candidate E
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check4E" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate E <span class="tick">&#10003;</span>
                 </label>
             </div>
 
@@ -290,43 +202,23 @@
                 <h2>Position 5: Outreach Officer</h2>
                 <label>
                     <input type="radio" name="choice5" value="Candidate A">
-                    Candidate A
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check5A" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate A <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice5" value="Candidate B">
-                    Candidate B
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check5B" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate B <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice5" value="Candidate C">
-                    Candidate C
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check5C" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate C <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice5" value="Candidate D">
-                    Candidate D
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check5D" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate D <span class="tick">&#10003;</span>
                 </label>
                 <label>
                     <input type="radio" name="choice5" value="Candidate E">
-                    Candidate E
-                    <span class="checkbox-label">
-                        <input type="checkbox" id="check5E" class="candidate-check">
-                        <span class="tick">&#10003;</span>
-                    </span>
+                    Candidate E <span class="tick">&#10003;</span>
                 </label>
             </div>
 
@@ -356,31 +248,21 @@
             }
         });
 
-        // Handle checkbox and radio button interaction
-        const candidateChecks = document.querySelectorAll('.candidate-check');
-        candidateChecks.forEach(check => {
-            check.addEventListener('change', function () {
-                const label = this.closest('label'); // Get the parent label of the checkbox
-                const isChecked = this.checked;
-
-                // Uncheck all checkboxes in the same voting section
-                const votingSection = label.closest('.voting-section');
-                const allCheckboxes = votingSection.querySelectorAll('.candidate-check');
-                allCheckboxes.forEach(cb => {
-                    if (cb !== this) { // Keep the current checkbox
-                        cb.checked = false;
-                        cb.nextElementSibling.style.display = 'none'; // Hide ticks
-                    }
-                });
-
-                // Update the selected class for labels
-                const allLabels = votingSection.querySelectorAll('label');
-                allLabels.forEach(l => l.classList.remove('selected')); // Remove selected class
-                if (isChecked) {
-                    label.classList.add('selected'); // Add selected class to the current label
-                    label.querySelector('.tick').style.display = 'inline'; // Show tick
-                } else {
-                    label.classList.remove('selected'); // Remove selected class if unchecked
+        // Handle ticks
+        const labels = document.querySelectorAll('label');
+        labels.forEach(label => {
+            label.addEventListener('click', function () {
+                // Remove the selected class from all labels
+                labels.forEach(l => l.classList.remove('selected'));
+                // Hide all ticks
+                document.querySelectorAll('.tick').forEach(tick => tick.style.display = 'none');
+                
+                // Add selected class to the clicked label
+                this.classList.add('selected');
+                // Show the tick for the selected label
+                const tick = this.querySelector('.tick');
+                if (tick) {
+                    tick.style.display = 'inline'; // Show the tick
                 }
             });
         });
