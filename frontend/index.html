@@ -41,7 +41,8 @@
         }
 
         label {
-            display: block;
+            display: flex;
+            align-items: center;
             margin: 10px 0;
             position: relative;
             padding: 10px;
@@ -49,27 +50,37 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             border: 1px solid #ddd;
-            overflow: hidden;
         }
 
         input[type="radio"] {
-            display: none; /* Hide the default radio button */
+            display: none;
         }
 
-        /* Style for candidate blocks */
         label:hover {
             background-color: #e9f5e9;
         }
 
         label.selected {
-            background-color: #c8e6c9; /* Light green background */
+            background-color: #c8e6c9;
         }
 
-        .tick {
-            display: none;
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            margin-left: auto;
+            border: 2px solid #4CAF50;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
             color: #4CAF50;
-            margin-left: 10px;
-            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .checkbox.tick {
+            background-color: #4CAF50;
+            color: white;
         }
 
         button {
@@ -102,123 +113,148 @@
         <form id="voteForm" action="/submitVote" method="POST">
             <input type="hidden" name="token" value="{{TOKEN}}">
 
-            <div class="voting-section">
+            <div class="voting-section" id="position1">
                 <h2>Position 1: Team Leader</h2>
                 <label>
+                    Candidate A
                     <input type="radio" name="choice1" value="Candidate A">
-                    Candidate A <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate B
                     <input type="radio" name="choice1" value="Candidate B">
-                    Candidate B <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate C
                     <input type="radio" name="choice1" value="Candidate C">
-                    Candidate C <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate D
                     <input type="radio" name="choice1" value="Candidate D">
-                    Candidate D <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate E
                     <input type="radio" name="choice1" value="Candidate E">
-                    Candidate E <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
             </div>
 
-            <div class="voting-section">
+            <div class="voting-section" id="position2">
                 <h2>Position 2: Secretary</h2>
                 <label>
+                    Candidate A
                     <input type="radio" name="choice2" value="Candidate A">
-                    Candidate A <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate B
                     <input type="radio" name="choice2" value="Candidate B">
-                    Candidate B <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate C
                     <input type="radio" name="choice2" value="Candidate C">
-                    Candidate C <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate D
                     <input type="radio" name="choice2" value="Candidate D">
-                    Candidate D <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate E
                     <input type="radio" name="choice2" value="Candidate E">
-                    Candidate E <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
             </div>
 
-            <div class="voting-section">
+            <div class="voting-section" id="position3">
                 <h2>Position 3: Treasurer</h2>
                 <label>
+                    Candidate A
                     <input type="radio" name="choice3" value="Candidate A">
-                    Candidate A <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate B
                     <input type="radio" name="choice3" value="Candidate B">
-                    Candidate B <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate C
                     <input type="radio" name="choice3" value="Candidate C">
-                    Candidate C <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate D
                     <input type="radio" name="choice3" value="Candidate D">
-                    Candidate D <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate E
                     <input type="radio" name="choice3" value="Candidate E">
-                    Candidate E <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
             </div>
 
-            <div class="voting-section">
+            <div class="voting-section" id="position4">
                 <h2>Position 4: Events Coordinator</h2>
                 <label>
+                    Candidate A
                     <input type="radio" name="choice4" value="Candidate A">
-                    Candidate A <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate B
                     <input type="radio" name="choice4" value="Candidate B">
-                    Candidate B <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate C
                     <input type="radio" name="choice4" value="Candidate C">
-                    Candidate C <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate D
                     <input type="radio" name="choice4" value="Candidate D">
-                    Candidate D <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate E
                     <input type="radio" name="choice4" value="Candidate E">
-                    Candidate E <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
             </div>
 
-            <div class="voting-section">
+            <div class="voting-section" id="position5">
                 <h2>Position 5: Outreach Officer</h2>
                 <label>
+                    Candidate A
                     <input type="radio" name="choice5" value="Candidate A">
-                    Candidate A <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate B
                     <input type="radio" name="choice5" value="Candidate B">
-                    Candidate B <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate C
                     <input type="radio" name="choice5" value="Candidate C">
-                    Candidate C <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate D
                     <input type="radio" name="choice5" value="Candidate D">
-                    Candidate D <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
                 <label>
+                    Candidate E
                     <input type="radio" name="choice5" value="Candidate E">
-                    Candidate E <span class="tick">&#10003;</span>
+                    <div class="checkbox"></div>
                 </label>
             </div>
 
@@ -229,7 +265,6 @@
 
     <script>
         document.getElementById('voteForm').addEventListener('submit', function (event) {
-            // Check if one candidate is selected for each position
             let valid = true;
             for (let i = 1; i <= 5; i++) {
                 const choices = document.getElementsByName(`choice${i}`);
@@ -241,28 +276,29 @@
             }
 
             if (!valid) {
-                event.preventDefault(); // Prevent form submission
-                document.getElementById('error-message').style.display = 'block'; // Show error message
+                event.preventDefault();
+                document.getElementById('error-message').style.display = 'block';
             } else {
-                document.getElementById('error-message').style.display = 'none'; // Hide error message
+                document.getElementById('error-message').style.display = 'none';
             }
         });
 
-        // Handle ticks
         const labels = document.querySelectorAll('label');
         labels.forEach(label => {
             label.addEventListener('click', function () {
-                // Remove the selected class from all labels
-                labels.forEach(l => l.classList.remove('selected'));
-                // Hide all ticks
-                document.querySelectorAll('.tick').forEach(tick => tick.style.display = 'none');
-                
-                // Add selected class to the clicked label
-                this.classList.add('selected');
-                // Show the tick for the selected label
-                const tick = this.querySelector('.tick');
-                if (tick) {
-                    tick.style.display = 'inline'; // Show the tick
+                const input = this.querySelector('input[type="radio"]');
+                if (input) {
+                    const name = input.getAttribute('name');
+                    const others = document.getElementsByName(name);
+                    others.forEach(other => {
+                        const otherLabel = other.closest('label');
+                        otherLabel.classList.remove('selected');
+                        const checkbox = otherLabel.querySelector('.checkbox');
+                        checkbox.classList.remove('tick');
+                    });
+                    this.classList.add('selected');
+                    const checkbox = this.querySelector('.checkbox');
+                    checkbox.classList.add('tick');
                 }
             });
         });
