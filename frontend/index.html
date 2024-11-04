@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -20,10 +22,12 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             text-align: center;
             color: #4CAF50;
         }
+
         h2 {
             font-size: 20px;
             margin-top: 20px;
@@ -31,17 +35,43 @@
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 5px;
         }
+
         .voting-section {
             margin-bottom: 20px;
         }
+
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin: 10px 0;
+            position: relative;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            overflow: hidden;
         }
+
         input[type="radio"] {
-            margin-right: 10px;
-            cursor: pointer;
+            display: none; /* Hide the default radio button */
         }
+
+        /* Style for candidate blocks */
+        label:hover {
+            background-color: #e9f5e9;
+        }
+
+        label.selected {
+            background-color: #c8e6c9; /* Light green background */
+        }
+
+        .tick {
+            display: none;
+            color: #4CAF50;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
         button {
             display: block;
             width: 100%;
@@ -53,9 +83,11 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #45a049;
         }
+
         .error {
             color: red;
             font-size: 14px;
@@ -63,55 +95,131 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Vote for Your Candidates</h1>
         <form id="voteForm" action="/submitVote" method="POST">
             <input type="hidden" name="token" value="{{TOKEN}}">
-            
+
             <div class="voting-section">
                 <h2>Position 1: Team Leader</h2>
-                <label><input type="radio" name="choice1" value="Candidate A"> Candidate A</label>
-                <label><input type="radio" name="choice1" value="Candidate B"> Candidate B</label>
-                <label><input type="radio" name="choice1" value="Candidate C"> Candidate C</label>
-                <label><input type="radio" name="choice1" value="Candidate D"> Candidate D</label>
-                <label><input type="radio" name="choice1" value="Candidate E"> Candidate E</label>
+                <label>
+                    <input type="radio" name="choice1" value="Candidate A">
+                    Candidate A <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice1" value="Candidate B">
+                    Candidate B <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice1" value="Candidate C">
+                    Candidate C <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice1" value="Candidate D">
+                    Candidate D <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice1" value="Candidate E">
+                    Candidate E <span class="tick">&#10003;</span>
+                </label>
             </div>
 
             <div class="voting-section">
                 <h2>Position 2: Secretary</h2>
-                <label><input type="radio" name="choice2" value="Candidate A"> Candidate A</label>
-                <label><input type="radio" name="choice2" value="Candidate B"> Candidate B</label>
-                <label><input type="radio" name="choice2" value="Candidate C"> Candidate C</label>
-                <label><input type="radio" name="choice2" value="Candidate D"> Candidate D</label>
-                <label><input type="radio" name="choice2" value="Candidate E"> Candidate E</label>
+                <label>
+                    <input type="radio" name="choice2" value="Candidate A">
+                    Candidate A <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice2" value="Candidate B">
+                    Candidate B <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice2" value="Candidate C">
+                    Candidate C <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice2" value="Candidate D">
+                    Candidate D <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice2" value="Candidate E">
+                    Candidate E <span class="tick">&#10003;</span>
+                </label>
             </div>
 
             <div class="voting-section">
                 <h2>Position 3: Treasurer</h2>
-                <label><input type="radio" name="choice3" value="Candidate A"> Candidate A</label>
-                <label><input type="radio" name="choice3" value="Candidate B"> Candidate B</label>
-                <label><input type="radio" name="choice3" value="Candidate C"> Candidate C</label>
-                <label><input type="radio" name="choice3" value="Candidate D"> Candidate D</label>
-                <label><input type="radio" name="choice3" value="Candidate E"> Candidate E</label>
+                <label>
+                    <input type="radio" name="choice3" value="Candidate A">
+                    Candidate A <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice3" value="Candidate B">
+                    Candidate B <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice3" value="Candidate C">
+                    Candidate C <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice3" value="Candidate D">
+                    Candidate D <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice3" value="Candidate E">
+                    Candidate E <span class="tick">&#10003;</span>
+                </label>
             </div>
 
             <div class="voting-section">
                 <h2>Position 4: Events Coordinator</h2>
-                <label><input type="radio" name="choice4" value="Candidate A"> Candidate A</label>
-                <label><input type="radio" name="choice4" value="Candidate B"> Candidate B</label>
-                <label><input type="radio" name="choice4" value="Candidate C"> Candidate C</label>
-                <label><input type="radio" name="choice4" value="Candidate D"> Candidate D</label>
-                <label><input type="radio" name="choice4" value="Candidate E"> Candidate E</label>
+                <label>
+                    <input type="radio" name="choice4" value="Candidate A">
+                    Candidate A <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice4" value="Candidate B">
+                    Candidate B <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice4" value="Candidate C">
+                    Candidate C <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice4" value="Candidate D">
+                    Candidate D <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice4" value="Candidate E">
+                    Candidate E <span class="tick">&#10003;</span>
+                </label>
             </div>
 
             <div class="voting-section">
                 <h2>Position 5: Outreach Officer</h2>
-                <label><input type="radio" name="choice5" value="Candidate A"> Candidate A</label>
-                <label><input type="radio" name="choice5" value="Candidate B"> Candidate B</label>
-                <label><input type="radio" name="choice5" value="Candidate C"> Candidate C</label>
-                <label><input type="radio" name="choice5" value="Candidate D"> Candidate D</label>
-                <label><input type="radio" name="choice5" value="Candidate E"> Candidate E</label>
+                <label>
+                    <input type="radio" name="choice5" value="Candidate A">
+                    Candidate A <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice5" value="Candidate B">
+                    Candidate B <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice5" value="Candidate C">
+                    Candidate C <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice5" value="Candidate D">
+                    Candidate D <span class="tick">&#10003;</span>
+                </label>
+                <label>
+                    <input type="radio" name="choice5" value="Candidate E">
+                    Candidate E <span class="tick">&#10003;</span>
+                </label>
             </div>
 
             <div class="error" id="error-message">Please select one candidate for each position!</div>
@@ -131,7 +239,7 @@
                     break;
                 }
             }
-            
+
             if (!valid) {
                 event.preventDefault(); // Prevent form submission
                 document.getElementById('error-message').style.display = 'block'; // Show error message
@@ -139,7 +247,12 @@
                 document.getElementById('error-message').style.display = 'none'; // Hide error message
             }
         });
-    </script>
-</body>
-</html>
 
+        // Handle ticks
+        const labels = document.querySelectorAll('label');
+        labels.forEach(label => {
+            label.addEventListener('click', function () {
+                // Remove the selected class from all labels
+                labels.for
+            })
+        });
